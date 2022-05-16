@@ -19,11 +19,7 @@ const HomepageOne = (
       root={{ ref }}
       {...rest}
       logo={{
-        as: Link,
-        props: {
-          to: "/",
-          onClick: toggle,
-        },
+        onClick: toggle,
       }}
       services={{
         as: Link,
@@ -78,7 +74,37 @@ const HomepageTwo = (
   return (
     <PlasmicHomepage
       root={{ ref }}
-      logo={{ props: { href: "/", onClick: toggle } }}
+      logo={{ onClick: toggle }}
+      services={{
+        props: {
+          link: "/services",
+        },
+      }}
+      features={{
+        props: {
+          link: "/features",
+        },
+      }}
+      company={{
+        props: {
+          link: "/company",
+        },
+      }}
+      contact={{
+        props: {
+          link: "/contact",
+        },
+      }}
+      login={{
+        props: {
+          link: "/login",
+        },
+      }}
+      signup={{
+        props: {
+          link: "/signup",
+        },
+      }}
       {...rest}
     />
   );
