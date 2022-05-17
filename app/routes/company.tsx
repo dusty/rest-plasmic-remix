@@ -1,5 +1,5 @@
 import Homepage from "~/components/Homepage";
 
-export default function Services() {
-  return <Homepage content={<h1>Services</h1>} />;
+export default function Company() {
+  return <Homepage content={<h1>Company</h1>} />;
 }

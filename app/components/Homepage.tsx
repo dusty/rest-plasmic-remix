@@ -5,6 +5,7 @@ import type { DefaultHomepageProps } from "./plasmic/test_123/PlasmicHomepage";
 import { PlasmicHomepage } from "./plasmic/test_123/PlasmicHomepage";
 import type { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { Link } from "@remix-run/react";
+import ButtonLink from "./ButtonLink";
 
 export interface HomepageProps extends DefaultHomepageProps {
   toggle: () => void;
@@ -22,11 +23,13 @@ const HomepageOne = (
         onClick: toggle,
       }}
       services={{
-        as: Link,
-        props: {
-          to: "/services",
-          prefetch: "intent",
-        },
+        as: ButtonLink,
+        props: { link: "/services" },
+        // as: Link,
+        // props: {
+        //   to: "/services",
+        //   prefetch: "intent",
+        // },
       }}
       features={{
         as: Link,
@@ -110,11 +113,9 @@ const HomepageTwo = (
   );
 };
 
-function Homepage_(props: HomepageProps, ref: HTMLElementRefOf<"div">) {
+function Homepage_(props: DefaultHomepageProps, ref: HTMLElementRefOf<"div">) {
   const [state, setState] = React.useState(true);
   const toggle = () => setState((cur) => !cur);
-
-  console.log("state", state);
   return state
     ? HomepageOne({ ...props, toggle }, ref)
     : HomepageTwo({ ...props, toggle }, ref);
