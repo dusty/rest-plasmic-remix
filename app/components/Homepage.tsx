@@ -32,39 +32,49 @@ const HomepageOne = (
         // },
       }}
       features={{
-        as: Link,
-        props: {
-          to: "/features",
-          prefetch: "intent",
-        },
+        as: ButtonLink,
+        props: { link: "/features" },
+        // as: Link,
+        // props: {
+        //   to: "/features",
+        //   prefetch: "intent",
+        // },
       }}
       company={{
-        as: Link,
-        props: {
-          to: "/company",
-          prefetch: "intent",
-        },
+        as: ButtonLink,
+        props: { link: "/company" },
+        // as: Link,
+        // props: {
+        //   to: "/company",
+        //   prefetch: "intent",
+        // },
       }}
       contact={{
-        as: Link,
-        props: {
-          to: "/contact",
-          prefetch: "intent",
-        },
+        as: ButtonLink,
+        props: { link: "/contact" },
+        // as: Link,
+        // props: {
+        //   to: "/contact",
+        //   prefetch: "intent",
+        // },
       }}
       login={{
-        as: Link,
-        props: {
-          to: "/login",
-          prefetch: "intent",
-        },
+        as: ButtonLink,
+        props: { link: "/login" },
+        // as: Link,
+        // props: {
+        //   to: "/login",
+        //   prefetch: "intent",
+        // },
       }}
       signup={{
-        as: Link,
-        props: {
-          to: "/signup",
-          prefetch: "intent",
-        },
+        as: ButtonLink,
+        props: { link: "/signup" },
+        // as: Link,
+        // props: {
+        //   to: "/signup",
+        //   prefetch: "intent",
+        // },
       }}
     />
   );

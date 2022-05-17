@@ -11,10 +11,18 @@ import { Link } from "@remix-run/react";
 interface ButtonProps extends DefaultButtonProps {}
 
 function ButtonLink_(props: ButtonProps, ref: ButtonRef) {
-  const { link, ...rest } = props;
-  const { plasmicProps } = PlasmicButton.useBehavior<ButtonProps>(rest, ref);
+  const { plasmicProps } = PlasmicButton.useBehavior<ButtonProps>(props, ref);
   return (
-    <PlasmicButton {...plasmicProps} root={{ as: Link, props: { to: link } }} />
+    <PlasmicButton
+      {...plasmicProps}
+      root={{
+        render: ({ children, ...rest }, Comp) => (
+          <Link {...(rest as any)} to={props.link || ""} prefetch="intent">
+            {children}
+          </Link>
+        ),
+      }}
+    />
   );
 }
 
